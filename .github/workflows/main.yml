@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'  # Usar una versión compatible con Buildozer
+        python-version: '3.9'  # Asegúrate de usar una versión compatible con Buildozer
 
     - name: Install dependencies
       run: |
@@ -27,6 +27,7 @@ jobs:
 
     - name: Build APK
       run: |
+        cd C:\Users\Angel\Desktop  # Cambia esto por la ruta donde está tu archivo .py
         buildozer -v android debug  # Este comando construirá tu APK
 
     - name: Upload APK
