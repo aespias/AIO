@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Actualizado a la versión más reciente
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Actualizado a la versión más reciente
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.8'
+        python-version: '3.8'  # Puedes cambiar a la versión que necesites
 
     - name: Install dependencies
       run: |
@@ -31,9 +31,8 @@ jobs:
         buildozer -v android debug
 
     - name: Upload APK
-      uses: actions/upload-artifact@v3  # Actualizado a la versión más reciente
+      uses: actions/upload-artifact@v3
       with:
         name: Combinatorios_AIO_V9.apk
         path: bin/Combinatorios_AIO_V9-*.apk
-
 
