@@ -1,0 +1,37 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main  # o el nombre de la rama donde tienes tu archivo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git python3-pip python3-setuptools python3-wheel python3-dev
+        pip install kivy
+        pip install buildozer
+
+    - name: Build APK
+      run: |
+        cd your_directory_name  # Cambia esto al nombre de la carpeta donde está tu archivo .py si está en una subcarpeta
+        buildozer -v android debug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: Combinatorios_AIO_V9.apk
+        path: bin/Combinatorios_AIO_V9-*.apk
