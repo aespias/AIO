@@ -3,7 +3,7 @@ name: Build APK
 on:
   push:
     branches:
-      - main  # o el nombre de la rama donde tienes tu archivo
+      - main  # Cambia si tu rama principal tiene otro nombre
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.8'  # Puedes cambiar a la versión que necesites
+        python-version: '3.8'  # Cambia la versión si es necesario
 
     - name: Install dependencies
       run: |
@@ -27,12 +27,10 @@ jobs:
 
     - name: Build APK
       run: |
-        cd your_directory_name  # Cambia esto al nombre de la carpeta donde está tu archivo .py si está en una subcarpeta
-        buildozer -v android debug
+        buildozer -v android debug  # Asegúrate de que este comando sea correcto según la ubicación de tu archivo
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: Combinatorios_AIO_V9.apk
         path: bin/Combinatorios_AIO_V9-*.apk
-
