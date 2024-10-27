@@ -27,8 +27,8 @@ jobs:
 
     - name: Build APK
       run: |
-        cd your_directory_name  # Cambia esto al nombre de la carpeta donde está tu archivo .py
-        buildozer -v android debug  # Asegúrate de que este comando sea correcto según la ubicación de tu archivo
+        cd .  # Esto significa que se queda en el directorio actual
+        buildozer -v android debug  # Este comando construirá tu APK
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
