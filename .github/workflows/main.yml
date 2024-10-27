@@ -27,7 +27,7 @@ jobs:
 
     - name: Build APK
       run: |
-        cd C:\Users\Angel\Desktop  # Cambia esto por la ruta donde está tu archivo .py
+        cd C:\Users\Angel\Desktop\  # Cambia esto por la ruta donde está tu archivo .py
         buildozer -v android debug  # Este comando construirá tu APK
 
     - name: Upload APK
