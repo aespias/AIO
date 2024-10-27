@@ -3,7 +3,7 @@ name: Build APK
 on:
   push:
     branches:
-      - main  # Cambia si tu rama principal tiene otro nombre
+      - main  # Asegúrate de que esta sea tu rama principal
 
 jobs:
   build:
@@ -34,3 +34,4 @@ jobs:
       with:
         name: Combinatorios_AIO_V9.apk
         path: bin/Combinatorios_AIO_V9-*.apk
+
