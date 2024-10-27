@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.8'  # Asegúrate de que esta versión sea compatible con tu código
+        python-version: '3.8'  # Puedes ajustar esto a la versión que necesites
 
     - name: Install dependencies
       run: |
@@ -27,7 +27,6 @@ jobs:
 
     - name: Build APK
       run: |
-        cd .  # Esto significa que se queda en el directorio actual
         buildozer -v android debug  # Este comando construirá tu APK
 
     - name: Upload APK
